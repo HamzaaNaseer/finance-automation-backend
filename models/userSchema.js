@@ -19,6 +19,11 @@ const userModel = new Schema({
     required: [true, "please provide a password"],
     minlength: [8, "password should be atleast 8 characters"],
   },
+  role: {
+    type: String,
+    enum: ["DONER,DONEE"],
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("User", userModel);
