@@ -6,7 +6,6 @@ const projectSchema = new Schema({
     type: String,
     required: [true, "name required"],
     minlength: [5, "name should atleast be 5 chars"],
-    maxlength: [30, "name should not exceed 30 chars "],
   },
   totalBudget: {
     type: Number,
