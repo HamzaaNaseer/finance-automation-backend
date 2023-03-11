@@ -6,7 +6,6 @@ const querySchema = new Schema({
     type: String,
     required: [true, "name required"],
     minlength: [5, "name should atleast be 5 chars"],
-    maxlength: [30, "name should not exceed 30 chars "],
   },
   comments: [
     {
@@ -28,6 +27,11 @@ const querySchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  createdBy: {
+    type: Schema.Types.ObjectId,
+    required: true,
+    ref: "User",
   },
 });
 

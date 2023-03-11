@@ -21,7 +21,7 @@ const userModel = new Schema({
   },
   role: {
     type: String,
-    enum: ["DONER,DONEE"],
+    enum: ["DONER","DONEE"],
     required: true,
   },
 });
