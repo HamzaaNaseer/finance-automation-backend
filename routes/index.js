@@ -5,7 +5,8 @@ const projectRoutes = require("./api/projectRoutes");
 const moduleRoutes = require("./api/modulesRoutes");
 const docRouets = require("./api/DocRoutes");
 const procurementRoutes = require("./api/procurementRoutes");
-
+const upcomingPayments = require("./api/upcomingPaymentRoutes");
+const transactionRoutes = require("./api/transacionRoutes");
 //use new routes here like
 //http://localhost:8080/user/....
 
@@ -17,5 +18,7 @@ router.use("/project", projectRoutes);
 router.use("/module", moduleRoutes);
 router.use("/doc", docRouets);
 router.use("/procurement", procurementRoutes);
+router.use("/upcoming-payments", upcomingPayments);
+router.use("/transactions", transactionRoutes);
 
 module.exports = router;
