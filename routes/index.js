@@ -3,6 +3,8 @@ const queryRoutes = require("./api/queryRoutes");
 const userRoutes = require("./api/userRoutes");
 const projectRoutes = require("./api/projectRoutes");
 const moduleRoutes = require("./api/modulesRoutes");
+const docRouets = require("./api/DocRoutes");
+const procurementRoutes = require("./api/procurementRoutes");
 
 //use new routes here like
 //http://localhost:8080/user/....
@@ -13,5 +15,7 @@ router.use("/user", userRoutes);
 router.use("/query", queryRoutes);
 router.use("/project", projectRoutes);
 router.use("/module", moduleRoutes);
+router.use("/doc", docRouets);
+router.use("/procurement", procurementRoutes);
 
 module.exports = router;

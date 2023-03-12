@@ -3,7 +3,7 @@ const multer = require("multer");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     //args sequence is errors, destination
-    cb(null, "./uploads/messageMedia");
+    cb(null, "uploads");
   },
   filename: (req, file, cb) => {
     console.log(file);
