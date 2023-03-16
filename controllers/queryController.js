@@ -14,7 +14,7 @@ exports.createQuery = catchAsyncError(async (req, res, next) => {
 });
 
 exports.getAllQueries = catchAsyncError(async (req, res, next) => {
-  const queries = await QueryModel.find();
+  const queries = await QueryModel.find().populate('createdBy');
 
   return res.status(200).json({ success: true, queries });
 });

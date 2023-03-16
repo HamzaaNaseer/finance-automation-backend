@@ -7,8 +7,10 @@ const jwt = require("jsonwebtoken");
 exports.login = catchAsyncError(async (req, res, next) => {
   console.log("login called");
   const { email, password } = req.body;
+  console.log("emais : ", email, "password : ", password);
   const user = await UserModel.findOne({ email, password });
   if (!user) {
+    console.log("no user found");
     return next(new ErrorHandler("incorrect credentials", 400));
   }
 

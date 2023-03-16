@@ -7,8 +7,8 @@ const {
 const { auth } = require("../../middlewares/auth");
 const router = express.Router();
 
-router.post("/create", auth, createQuery);
-router.get("/get", auth, getAllQueries);
+router.post("/create", createQuery);
+router.get("/get", getAllQueries);
 router.patch("/update/:id", auth, addComment);
 
 module.exports = router;
