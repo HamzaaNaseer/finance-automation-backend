@@ -14,7 +14,10 @@ exports.createQuery = catchAsyncError(async (req, res, next) => {
 });
 
 exports.getAllQueries = catchAsyncError(async (req, res, next) => {
-  const queries = await QueryModel.find().populate('createdBy');
+  const queries = await QueryModel.find().populate({
+    path: "comments.commented_by",
+    select: "name role",
+  }).populate("createdBy");
 
   return res.status(200).json({ success: true, queries });
 });
