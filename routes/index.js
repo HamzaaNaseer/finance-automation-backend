@@ -8,6 +8,9 @@ const procurementRoutes = require("./api/procurementRoutes");
 const upcomingPayments = require("./api/upcomingPaymentRoutes");
 const transactionRoutes = require("./api/transacionRoutes");
 const chartRoutes = require("./api/chartsRoute");
+const { auth } = require("../middlewares/auth");
+const { projectManagement } = require("../controllers/projectManagement");
+const { financialManagement } = require("../controllers/financialmanagement");
 //use new routes here like
 //http://localhost:8080/user/....
 
@@ -22,5 +25,8 @@ router.use("/procurement", procurementRoutes);
 router.use("/upcoming-payments", upcomingPayments);
 router.use("/transactions", transactionRoutes);
 router.use("/charts", chartRoutes);
+
+router.use("/project-management", auth, projectManagement);
+router.use("/financial-management",auth,financialManagement)
 
 module.exports = router;
