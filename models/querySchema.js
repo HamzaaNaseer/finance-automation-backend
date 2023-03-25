@@ -5,7 +5,6 @@ const querySchema = new Schema({
   subject: {
     type: String,
     required: [true, "name required"],
-    minlength: [5, "name should atleast be 5 chars"],
   },
   comments: [
     {

@@ -5,11 +5,20 @@ exports.addDoc = catchAsyncError(async (req, res, next) => {
   console.log("file is ", req.file);
   const link = `/documents/${req.file.filename}`;
 
-  const doc = await DocModel.create({ link, name: req.file.originalname });
+  const doc = await DocModel.create({
+    link,
+    name: req.file.originalname,
+    postedBy: req.user._id,
+  });
   return res.status(200).json({ success: true, doc });
 });
 
 exports.getAllDocs = catchAsyncError(async (req, res, next) => {
   const docs = await DocModel.find();
   return res.status(200).json({ success: true, docs });
+});
+
+exports.deleteDoc = catchAsyncError(async (req, res, next) => {
+  await DocModel.findByIdAndDelete(req.params.id);
+  return res.status(200).json({ success: true });
 });

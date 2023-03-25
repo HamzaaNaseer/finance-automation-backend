@@ -8,6 +8,7 @@ const procurementRoutes = require("./api/procurementRoutes");
 const upcomingPayments = require("./api/upcomingPaymentRoutes");
 const transactionRoutes = require("./api/transacionRoutes");
 const chartRoutes = require("./api/chartsRoute");
+const monthlyRoutes = require("./api/monthlyRoute")
 const { auth } = require("../middlewares/auth");
 const { projectManagement } = require("../controllers/projectManagement");
 const { financialManagement } = require("../controllers/financialmanagement");
@@ -28,5 +29,6 @@ router.use("/charts", chartRoutes);
 
 router.use("/project-management", auth, projectManagement);
 router.use("/financial-management",auth,financialManagement)
+router.use("/monthly",monthlyRoutes)
 
 module.exports = router;

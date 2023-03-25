@@ -9,6 +9,10 @@ const documents = new Schema({
   name: {
     type: String,
   },
+  postedBy:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"User"
+  }
 });
 
 module.exports = mongoose.model("Documents", documents);
