@@ -18,7 +18,8 @@ const docsUploader = multer({
     //allowing audio,docx,pdf,jpeg,png,jpg
     if (
       //   file.mimetype === "audio/mpeg" ||
-      file.mimetype === "application/pdf"
+      file.mimetype === "application/pdf" ||
+      file.mimetype === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
       //   file.mimetype ===
       //     "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
       //   file.mimetype === "image/jpeg" ||
